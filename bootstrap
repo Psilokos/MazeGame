@@ -1,0 +1,13 @@
+#! /bin/sh
+
+if [ "$#" != "0" ]; then
+    echo "Usage: $(basename $0)"
+    echo "  Performs autotools bootstraping (calls autoreconf to generate m4 macros, configure, and Makefile.in)."
+    exit 1
+fi
+
+cd "$(dirname "$0")"
+set -e
+autoreconf --force --install --verbose
+rm -f stamp-h*
+echo "Succesfully bootstrapped"
