@@ -1,1 +1,3 @@
-SUBDIRS = bin
+SUBDIRS = bin src engines
+
+ACLOCAL_AMFLAGS = -I m4
